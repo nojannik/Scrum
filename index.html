@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Methodology Guide - Tuff8 Project</title>
+    <style>
+        /* Reset and Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Tabs Navigation */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            background: #fff;
+            border: none;
+            padding: 15px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tab-button:hover {
+            background: #764ba2;
+            color: #fff;
+        }
+
+        .tab-button.active {
+            background: #667eea;
+            color: #fff;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            min-height: 400px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .tab-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .tab-section h2 {
+            margin-bottom: 20px;
+            color: #764ba2;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .tab-section h3 {
+            margin-top: 20px;
+            color: #667eea;
+        }
+
+        .tab-section ul, .tab-section ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .tab-section blockquote {
+            background: #f0f0f0;
+            padding: 15px;
+            border-left: 5px solid #667eea;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .epics ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scrum Methodology Guide</h1>
+            <p>Learn Scrum from A-Z with the Tuff8 Shopify Website Project</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-button active" data-tab="introduction">Introduction</button>
+            <button class="tab-button" data-tab="key-concepts">Key Concepts</button>
+            <button class="tab-button" data-tab="real-world-scenario">Real-World Scenario</button>
+            <button class="tab-button" data-tab="workflow">Workflow</button>
+            <button class="tab-button" data-tab="tips">Tips</button>
+            <button class="tab-button" data-tab="conclusion">Conclusion</button>
+        </nav>
+
+        <div class="tab-content">
+            <!-- Introduction Tab -->
+            <section id="introduction" class="tab-section active">
+                <h2>1. Introduction to Scrum</h2>
+                <p><strong>Scrum</strong> is a <strong>framework</strong> used to manage and complete complex projects. It's part of the <strong>Agile</strong> methodology, which emphasizes flexibility, collaboration, and customer satisfaction. Scrum breaks down projects into smaller, manageable pieces, allowing teams to deliver value incrementally and adapt to changes quickly.</p>
+                
+                <h3>Why Scrum?</h3>
+                <ul>
+                    <li><strong>Flexibility:</strong> Easily adapt to changes in project requirements.</li>
+                    <li><strong>Collaboration:</strong> Foster teamwork and open communication.</li>
+                    <li><strong>Transparency:</strong> Keep everyone informed about project progress.</li>
+                    <li><strong>Continuous Improvement:</strong> Regularly assess and enhance processes.</li>
+                </ul>
+            </section>
+
+            <!-- Key Concepts Tab -->
+            <section id="key-concepts" class="tab-section">
+                <h2>2. Key Scrum Concepts</h2>
+                <p>Understanding the foundational elements of Scrum is essential. Let's explore <strong>Epics</strong>, <strong>User Stories</strong>, <strong>Tasks</strong>, and <strong>Bugs</strong> in simple terms with real-world examples.</p>
+                
+                <h3>Epic</h3>
+                <p><strong>Definition:</strong> An <strong>Epic</strong> is a <strong>large body of work</strong> that can be broken down into smaller tasks or stories. It represents a significant feature or requirement that delivers substantial value to the user.</p>
+                <p><strong>Real-World Example:</strong>  
+                In the Tuff8 Shopify project, an Epic could be <em>"Develop the Homepage Design."</em> This is a broad goal that encompasses various design elements and functionalities.</p>
+                
+                <h3>User Story</h3>
+                <p><strong>Definition:</strong> A <strong>User Story</strong> is a <strong>smaller, specific requirement</strong> written from the perspective of the end-user. It focuses on what the user wants to achieve and why.</p>
+                <p><strong>Format:</strong><br>
+                <em>"As a [type of user], I want to [perform an action] so that [benefit]."</em></p>
+                <p><strong>Real-World Example:</strong><br>
+                For the Epic <em>"Develop the Homepage Design,"</em> a User Story might be:<br>
+                <em>"As a visitor, I want to see featured products on the homepage so that I can quickly find popular items."</em></p>
+                
+                <h3>Task</h3>
+                <p><strong>Definition:</strong> A <strong>Task</strong> is an <strong>individual piece of work</strong> needed to complete a User Story. Tasks are actionable items assigned to team members.</p>
+                <p><strong>Real-World Example:</strong><br>
+                For the User Story above, Tasks could include:
+                <ol>
+                    <li><strong>Design the featured products section layout.</strong></li>
+                    <li><strong>Select and edit images for featured products.</strong></li>
+                    <li><strong>Implement the featured products section in Shopify.</strong></li>
+                </ol>
+                
+                <h3>Bug</h3>
+                <p><strong>Definition:</strong> A <strong>Bug</strong> is a <strong>defect or error</strong> in the product that needs to be fixed. Bugs can arise from development issues, design flaws, or user feedback.</p>
+                <p><strong>Real-World Example:</strong><br>
+                <em>"The featured products section does not display correctly on mobile devices."</em><br>
+                This Bug needs to be addressed to ensure a seamless user experience across all devices.</p>
+            </section>
+
+            <!-- Real-World Scenario Tab -->
+            <section id="real-world-scenario" class="tab-section">
+                <h2>3. Real-World Scenario: Tuff8 Shopify Project</h2>
+                <p>Let's walk through how Scrum concepts are applied in a real project—<strong>building the Tuff8 Shopify website</strong>.</p>
+                
+                <h3>Defining Epics</h3>
+                <p>Start by identifying <strong>big features or goals</strong> for the project. These Epics will guide the overall development.</p>
+                <h4>Epics for Tuff8:</h4>
+                <ul>
+                    <li><strong>Website UI/UX Design</strong></li>
+                    <li><strong>Product Page Optimization</strong></li>
+                    <li><strong>Homepage Development</strong></li>
+                    <li><strong>Custom Features Implementation</strong></li>
+                    <li><strong>Marketing Strategy Development</strong></li>
+                </ul>
+                
+                <h3>Creating User Stories</h3>
+                <p>Break down each Epic into <strong>User Stories</strong> that describe specific functionalities or requirements from the user's perspective.</p>
+                
+                <h4>Epic: Website UI/UX Design</h4>
+                <ul>
+                    <li><em>"As a visitor, I want a clean and modern layout so that I can easily navigate the website."</em></li>
+                    <li><em>"As a returning customer, I want to see my recent orders on the dashboard so that I can reorder quickly."</em></li>
+                </ul>
+                
+                <h4>Epic: Product Page Optimization</h4>
+                <ul>
+                    <li><em>"As a shopper, I want high-quality images of products so that I can see details before purchasing."</em></li>
+                    <li><em>"As a customer, I want detailed product descriptions so that I understand the features and benefits."</em></li>
+                </ul>
+                
+                <h3>Breaking Down into Tasks</h3>
+                <p>For each User Story, define <strong>Tasks</strong> that detail the steps needed to implement the story.</p>
+                
+                <h4>User Story Example:</h4>
+                <p><em>"As a shopper, I want high-quality images of products so that I can see details before purchasing."</em></p>
+                
+                <h5>Tasks:</h5>
+                <ol>
+                    <li><strong>Select Products for High-Quality Images:</strong> Designer 1 selects which products need enhanced images.</li>
+                    <li><strong>Edit Product Photos:</strong> Designer 2 edits and optimizes the selected product images for web display.</li>
+                    <li><strong>Upload Images to Shopify:</strong> Programmer uploads the edited images to the respective product pages on Shopify.</li>
+                    <li><strong>Review and Feedback:</strong> Marketing Manager reviews the images for consistency and quality.</li>
+                </ol>
+                
+                <h3>Handling Bugs</h3>
+                <p>During the project, you might encounter <strong>Bugs</strong> that need immediate attention to maintain the website's quality.</p>
+                
+                <h4>Bug Example:</h4>
+                <p><em>"The product image gallery is not loading on the product page."</em></p>
+                
+                <h5>Steps to Resolve:</h5>
+                <ol>
+                    <li><strong>Identify the Bug:</strong> A team member notices the issue while testing.</li>
+                    <li><strong>Log the Bug:</strong> Create a Bug report detailing the problem.</li>
+                    <li><strong>Assign to Programmer:</strong> The Programmer investigates the cause and fixes the image gallery script.</li>
+                    <li><strong>Test the Fix:</strong> Ensure the gallery loads correctly on all devices.</li>
+                </ol>
+            </section>
+
+            <!-- Workflow Tab -->
+            <section id="workflow" class="tab-section">
+                <h2>4. Workflow: From Idea to Implementation</h2>
+                <p>Understanding how to move from Epics to User Stories, Tasks, and Bugs is crucial. Here's a <strong>step-by-step workflow</strong> using the Tuff8 project.</p>
+                
+                <ol>
+                    <li><strong>Identify Epics:</strong>  
+                        <p>Start by listing out major features or goals. For Tuff8, examples include UI/UX Design and Marketing Strategy.</p>
+                    </li>
+                    <li><strong>Create User Stories:</strong>  
+                        <p>Break down each Epic into smaller User Stories that focus on specific user needs.</p>
+                    </li>
+                    <li><strong>Define Tasks:</strong>  
+                        <p>For each User Story, list actionable Tasks that need to be completed. Assign these tasks to team members based on their roles.</p>
+                    </li>
+                    <li><strong>Plan Sprints:</strong>  
+                        <p>Organize Tasks into <strong>Sprints</strong> (typically 2-week cycles). During Sprint Planning, select which User Stories and Tasks to work on.</p>
+                    </li>
+                    <li><strong>Daily Standups:</strong>  
+                        <p>Hold short daily meetings where each team member shares what they did yesterday, what they're doing today, and any blockers they face.</p>
+                    </li>
+                    <li><strong>Sprint Review:</strong>  
+                        <p>At the end of each Sprint, demonstrate the completed work to stakeholders and gather feedback.</p>
+                    </li>
+                    <li><strong>Sprint Retrospective:</strong>  
+                        <p>Reflect on what went well and what could be improved in the next Sprint.</p>
+                    </li>
+                    <li><strong>Handle Bugs:</strong>  
+                        <p>Address any Bugs that arise promptly to ensure the website remains functional and user-friendly.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Tips Tab -->
+            <section id="tips" class="tab-section">
+                <h2>5. Tips for Creating Great Epics and User Stories</h2>
+                <p>Creating effective Epics and User Stories is vital for successful Scrum implementation. Here are some <strong>practical tips</strong>:</p>
+                
+                <h3>Creating Effective Epics</h3>
+                <ul>
+                    <li><strong>Be Clear and Broad:</strong>  
+                        <p>Epics should encompass large features without getting bogged down in details. They provide a high-level overview.</p>
+                    </li>
+                    <li><strong>Align with Goals:</strong>  
+                        <p>Ensure each Epic aligns with the project's overall objectives and delivers significant value.</p>
+                    </li>
+                    <li><strong>Limit the Number:</strong>  
+                        <p>Avoid having too many Epics. Focus on key areas to maintain clarity and direction.</p>
+                    </li>
+                    <li><strong>Example:</strong>  
+                        <p>Instead of having separate Epics for "Design Homepage Layout" and "Design Homepage Navigation," combine them into <em>"Homepage Design."</em></p>
+                    </li>
+                </ul>
+                
+                <h3>Writing Great User Stories</h3>
+                <ul>
+                    <li><strong>Use the Standard Format:</strong>  
+                        <p><em>"As a [user], I want to [action] so that [benefit]."</em></p>
+                    </li>
+                    <li><strong>Focus on User Needs:</strong>  
+                        <p>Center the story around what the user wants and why, not how to implement it.</p>
+                    </li>
+                    <li><strong>Be Specific but Flexible:</strong>  
+                        <p>Provide enough detail to understand the requirement without being overly prescriptive.</p>
+                    </li>
+                    <li><strong>Prioritize:</strong>  
+                        <p>Not all stories are equal. Prioritize based on value and urgency.</p>
+                    </li>
+                    <li><strong>Example:</strong>  
+                        <p><em>"As a shopper, I want to filter products by category so that I can find items relevant to my interests quickly."</em></p>
+                    </li>
+                </ul>
+                
+                <h3>Breaking Down Tasks</h3>
+                <ul>
+                    <li><strong>Action-Oriented:</strong>  
+                        <p>Tasks should start with verbs like "Design," "Develop," "Test," etc.</p>
+                    </li>
+                    <li><strong>Small and Manageable:</strong>  
+                        <p>Each Task should be achievable within a day or less to maintain momentum.</p>
+                    </li>
+                    <li><strong>Clear Ownership:</strong>  
+                        <p>Assign each Task to a specific team member to ensure accountability.</p>
+                    </li>
+                    <li><strong>Example Tasks for the User Story Above:</strong>  
+                        <ol>
+                            <li><strong>Design filter dropdown menu UI:</strong> Designer 1 creates the visual layout for the filter menu.</li>
+                            <li><strong>Implement filter functionality in Shopify:</strong> Programmer adds the necessary code to enable filtering by category.</li>
+                            <li><strong>Test filter on different devices:</strong> Designer 2 and Programmer collaboratively test the feature on mobile and desktop.</li>
+                            <li><strong>Gather feedback from Marketing Manager:</strong> Ensure the filter aligns with marketing strategies and product categorization.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Conclusion Tab -->
+            <section id="conclusion" class="tab-section">
+                <h2>6. Conclusion</h2>
+                <p><strong>Scrum</strong> is a <strong>powerful framework</strong> that helps teams manage complex projects by breaking them down into manageable parts. Understanding key concepts like <strong>Epics</strong>, <strong>User Stories</strong>, <strong>Tasks</strong>, and <strong>Bugs</strong> is essential for effective Scrum implementation.</p>
+                
+                <p>By applying Scrum to the <strong>Tuff8 Shopify Website Project</strong>, the team can ensure a structured approach to design, development, and marketing, leading to a <strong>high-quality, user-friendly website</strong> that meets both business goals and customer needs.</p>
+                
+                <h3>Remember:</h3>
+                <ul>
+                    <li><strong>Start Small:</strong> Begin with clear Epics and progressively break them down.</li>
+                    <li><strong>Collaborate:</strong> Maintain open communication within the team.</li>
+                    <li><strong>Adapt:</strong> Be ready to adjust plans based on feedback and changing requirements.</li>
+                    <li><strong>Iterate:</strong> Continuously improve through regular reviews and retrospectives.</li>
+                </ul>
+                
+                <h3>Interactive Learning Enhancement</h3>
+                <p>To make this guide even more engaging for <strong>graphic designers</strong> and <strong>beginners</strong>, consider the following additions:</p>
+                <ul>
+                    <li><strong>Visual Diagrams:</strong> Use flowcharts to illustrate how Epics break down into User Stories and Tasks.</li>
+                    <li><strong>Real Screenshots:</strong> Include screenshots from the Tuff8 project to show examples of designs and implementations.</li>
+                    <li><strong>Interactive Elements:</strong> Implement quizzes or interactive scenarios where learners can practice creating User Stories and Tasks.</li>
+                    <li><strong>Video Tutorials:</strong> Embed short videos explaining each Scrum concept with visual examples.</li>
+                    <li><strong>Glossary:</strong> Add a glossary section for quick reference to key Scrum terms.</li>
+                </ul>
+                
+                <p><strong>Happy Scrum Learning! 🚀</strong></p>
+            </section>
+        </div>
+
+        <footer>
+            <p>Digital Libratel will be 2025 success</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-button');
+            const sections = document.querySelectorAll('.tab-section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+
+                    // Hide all sections
+                    sections.forEach(section => section.classList.remove('active'));
+                    // Show the corresponding section
+                    const activeSection = document.getElementById(tab.dataset.tab);
+                    if (activeSection) {
+                        activeSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
